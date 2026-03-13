@@ -32,7 +32,7 @@ Cl_list = []                            # saving lift coeficients
 for AoA in AoA_range:
     results = solve_panel_method(NACA_code, AoA, N)     # halelujah chorus
     Cl_list.append(results["Cl"])                       # collecting our Cl's
-
+'''
 plt.plot(AoA_range, Cl_list, 'salmon', label=f"NACA {NACA_code}")
 plt.xlabel("AoA (°)")
 plt.ylabel("$C_L$")
@@ -40,7 +40,7 @@ plt.title("Panel Method - $C_l$ vs AoA")
 plt.legend()
 plt.grid()
 plt.show()
-
+'''
 
 # ------------------------------------
 # ---- Part 3 Pressure difference ---- 
@@ -70,6 +70,7 @@ Cp_lower_interp = np.interp(xp_upper, xp_lower, Cp_lower)
 # delta Cp = upper - lower (I think?) (What was that other equation?)
 delta_Cp = Cp_upper - Cp_lower_interp
 
+'''
 fig, ax = plt.subplots()
 ax.plot(xp_upper, delta_Cp, 'salmon', label=f"$\\alpha$ = {AoA}°")
 ax.set_title(f'Panel Method - $\\Delta C_p$ distribution [NACA {NACA_code}]')
@@ -78,14 +79,14 @@ ax.set_ylabel("$\\Delta C_p$")
 ax.legend(loc='best')
 plt.grid()
 plt.show()
-
+'''
 
 # --------------------------------------
 # ---- Part 4 Pressure distribution ---- 
 # --------------------------------------
 
 # Same angle of attack, Cp, and xp as part 3
-
+'''
 plt.close('all') 
 fig, ax = plt.subplots()
 ax.plot(xp, Cp, 'salmon', label=f"$\\alpha$ = {AoA}°")
@@ -95,6 +96,6 @@ ax.set_ylabel("$C_P$")
 ax.legend(loc='best')
 plt.grid()
 plt.show()
-
+'''
 
 

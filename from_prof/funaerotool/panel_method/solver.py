@@ -1,13 +1,11 @@
 import numpy as np
 
-from funaerotool.panel_method.freestream import freestream_components
-from funaerotool.panel_method.induction_matrix import (
-    global_panel_induced_velocity_matrices,
-)
-from funaerotool.panel_method.postprocessing import compute_pressure_coefficient
-from funaerotool.panel_method.preprocessing import panel_geometry
-from funaerotool.panel_method.transformations import global_to_local
-from funaerotool.panel_method.vortex import parabolic_vortex_distribution
+from .freestream import freestream_components
+from .induction_matrix import (global_panel_induced_velocity_matrices,)
+from .postprocessing import compute_pressure_coefficient
+from .preprocessing import panel_geometry
+from .transformations import global_to_local
+from .vortex import parabolic_vortex_distribution
 
 
 def solve_closed_contour_panel_method(

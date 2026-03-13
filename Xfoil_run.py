@@ -135,27 +135,30 @@ def read_polar_file(file_path):
 # ---------------------------
 def read_cp_file(file_path):
     x = []
+    y = []
     cp = []
 
     with open(file_path, "r") as f:
         for line in f:
             parts = line.split()
-            if len(parts) < 2:
+            if len(parts) < 3:
                 continue
             try:
                 x_val = float(parts[0])
-                cp_val = float(parts[1])
+                y_val = float(parts[1])
+                cp_val = float(parts[2])
                 x.append(x_val)
+                y.append(y_val)
                 cp.append(cp_val)
             except:
                 pass
 
-    return np.array(x), np.array(cp)
-
+    return np.array(x), np.array(y), np.array(cp)
 
 # --------------------------
 # ---- Solve all cases  ----
 # --------------------------
+'''
 all_data = {}
 
 for airfoil in airfoils:
@@ -173,7 +176,6 @@ for airfoil in airfoils:
             "x_cp": x_cp,
             "cp": cp
         }
-
 
 # ----------------------------
 # ---- Part 2 Lift plots  ----
@@ -234,3 +236,6 @@ for airfoil in airfoils:
     plt.legend()
     plt.savefig(os.path.join(results_folder, f"{airfoil}_cp_distribution.png"), dpi=300, bbox_inches="tight")
     plt.show()
+
+
+'''
