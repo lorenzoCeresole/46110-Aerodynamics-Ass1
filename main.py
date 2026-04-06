@@ -29,23 +29,23 @@ from Xfoil_run import run_case, read_polar_file, read_cp_file, results_folder
 # USER SETTINGS
 # ============================================================
 
-AIRFOILS = [2312, 2324, 4412, 4424]
-XFOIL_CASES = ["free", "fixed"]
+airfoils = [2312, 2324, 4412, 4424]
+xFoil_cases = ["free", "fixed"]
 
-ALPHA_START = -10
-ALPHA_END = 15
-ALPHA_STEP = 1
-ALPHAS = np.arange(ALPHA_START, ALPHA_END + ALPHA_STEP, ALPHA_STEP)
+alpha_start = -10
+alpha_end = 15
+alpha_step = 1
+aoas = np.arange(alpha_start, alpha_end + alpha_step, alpha_step)
 
 ALPHA_CP = 10
 N_PANELS = 201
 N_GEOM = 300
 
-SAVE_FIGURES = True
-SHOW_FIGURES = True
+save_figures = True
+show_figures = True
 
-FIG_DIR = "Figures"
-os.makedirs(FIG_DIR, exist_ok=True)
+fig_dir = "Figures"
+os.makedirs(fig_dir, exist_ok=True)
 
 
 # ============================================================
@@ -53,8 +53,8 @@ os.makedirs(FIG_DIR, exist_ok=True)
 # ============================================================
 
 def savefig(name):
-    if SAVE_FIGURES:
-        path = os.path.join(FIG_DIR, name)
+    if save_figures:
+        path = os.path.join(fig_dir, name)
         plt.savefig(path, dpi=300, bbox_inches="tight")
 
 
@@ -176,14 +176,14 @@ def run_thin_airfoil_for_code(code):
     m, p, xx = parse_naca(code)
 
     cl_list = []
-    for alpha in ALPHAS:
+    for alpha in aoas:
         result = thin_airfoil(m, p, alpha)
         cl_list.append(result["Cl"])
 
     cp10 = thin_airfoil(m, p, ALPHA_CP)
 
     return {
-        "alpha": ALPHAS.copy(),
+        "alpha": aoas.copy(),
         "cl": np.asarray(cl_list),
         "x_delta": np.asarray(cp10["x/c"]),
         "delta_cp": np.asarray(cp10["delta_Cp"]),
@@ -192,7 +192,7 @@ def run_thin_airfoil_for_code(code):
 
 def run_panel_for_code(code):
     cl_list = []
-    for alpha in ALPHAS:
+    for alpha in aoas:
         result = solve_panel_method(code, alpha, N=N_PANELS)
         cl_list.append(result["Cl"])
 
@@ -202,7 +202,7 @@ def run_panel_for_code(code):
     x_delta, delta_cp, _, _ = delta_cp_from_surfaces(x_upper, cp_upper, x_lower, cp_lower)
 
     return {
-        "alpha": ALPHAS.copy(),
+        "alpha": aoas.copy(),
         "cl": np.asarray(cl_list),
         "cp10_raw": cp10,
         "x_delta": x_delta,
@@ -214,7 +214,7 @@ def run_xfoil_for_code(code):
     code_str = str(code)
     out = {}
 
-    for case in XFOIL_CASES:
+    for case in xFoil_cases:
         polar_path, cp_path = run_case(code_str, case)
 
         alpha, cl, cd = read_polar_file(polar_path)
@@ -248,7 +248,7 @@ def run_xfoil_for_code(code):
 def run_all_methods():
     all_results = {}
 
-    for code in AIRFOILS:
+    for code in airfoils:
         print(f"Running NACA {code} ...")
         all_results[code] = {
             "thin": run_thin_airfoil_for_code(code),
@@ -330,7 +330,7 @@ def plot_xfoil_polar(code, results):
 
     xfoil = results["xfoil"]
 
-    for case, marker in zip(XFOIL_CASES, ["o-", "s-"]):
+    for case, marker in zip(xFoil_cases, ["o-", "s-"]):
         cd = xfoil[case]["cd"]
         cl = xfoil[case]["cl"]
         ax.plot(cd, cl, marker, markersize=4, label=f"XFOIL {case}")
@@ -351,8 +351,8 @@ def plot_xfoil_polar(code, results):
 def build_xfoil_summary_table(all_results):
     rows = []
 
-    for code in AIRFOILS:
-        for case in XFOIL_CASES:
+    for code in airfoils:
+        for case in xFoil_cases:
             alpha = all_results[code]["xfoil"][case]["alpha"]
             cl = all_results[code]["xfoil"][case]["cl"]
             cd = all_results[code]["xfoil"][case]["cd"]
@@ -395,25 +395,25 @@ def print_xfoil_summary_table(rows):
 # ============================================================
 
 def main():
-    # 1) geometry plots
+    # geometry plots
     plot_geometry_pair(2312, 2324, "NACA 2312 and 2324", "geometry_2312_2324.png")
     plot_geometry_pair(4412, 4424, "NACA 4412 and 4424", "geometry_4412_4424.png")
 
-    # 2) run all methods
+    # run all methods
     all_results = run_all_methods()
 
-    # 3) per-airfoil plots
-    for code in AIRFOILS:
+    # per-airfoil plots
+    for code in airfoils:
         plot_cl_vs_alpha(code, all_results[code])
         plot_delta_cp(code, all_results[code])
         plot_cp(code, all_results[code])
         plot_xfoil_polar(code, all_results[code])
 
-    # 4) summary table
+    # summary table
     rows = build_xfoil_summary_table(all_results)
     print_xfoil_summary_table(rows)
 
-    if SHOW_FIGURES:
+    if show_figures:
         plt.show()
 
 

@@ -1,0 +1,47 @@
+XFOIL QUESTION 6 SUMMARY
+==========================================================================================
+
+2312     | free_Re1500000_N9              | max Cl/Cd =  114.979 | AoA =   5.00 deg | Cl =  0.8129 | Cd =  0.007070
+2312     | fixed_Re1500000_XTR0.10        | max Cl/Cd =  101.120 | AoA =   8.00 deg | Cl =  1.0921 | Cd =  0.010800
+2312     | free_Re150000_N9               | max Cl/Cd =   57.891 | AoA =   8.00 deg | Cl =  1.0594 | Cd =  0.018300
+2312     | fixed_Re150000_XTR0.10         | max Cl/Cd =   50.574 | AoA =   8.00 deg | Cl =  1.0221 | Cd =  0.020210
+2324     | free_Re1500000_N9              | max Cl/Cd =   91.654 | AoA =   8.00 deg | Cl =  0.9917 | Cd =  0.010820
+2324     | fixed_Re1500000_XTR0.10        | max Cl/Cd =   59.027 | AoA =  10.00 deg | Cl =  1.0979 | Cd =  0.018600
+2324     | free_Re150000_N9               | max Cl/Cd =   43.678 | AoA =   8.00 deg | Cl =  1.2112 | Cd =  0.027730
+2324     | fixed_Re150000_XTR0.10         | max Cl/Cd =   27.178 | AoA =   7.00 deg | Cl =  0.7917 | Cd =  0.029130
+4412     | free_Re1500000_N9              | max Cl/Cd =  145.730 | AoA =   5.00 deg | Cl =  1.0274 | Cd =  0.007050
+4412     | fixed_Re1500000_XTR0.10        | max Cl/Cd =  107.771 | AoA =   8.00 deg | Cl =  1.3008 | Cd =  0.012070
+4412     | free_Re150000_N9               | max Cl/Cd =   68.646 | AoA =   8.00 deg | Cl =  1.2878 | Cd =  0.018760
+4412     | fixed_Re150000_XTR0.10         | max Cl/Cd =   52.165 | AoA =   7.00 deg | Cl =  1.0939 | Cd =  0.020970
+4424     | free_Re1500000_N9              | max Cl/Cd =  100.244 | AoA =   7.00 deg | Cl =  1.1097 | Cd =  0.011070
+4424     | fixed_Re1500000_XTR0.10        | max Cl/Cd =   52.356 | AoA =   7.00 deg | Cl =  0.9513 | Cd =  0.018170
+4424     | free_Re150000_N9               | max Cl/Cd =   45.498 | AoA =   5.00 deg | Cl =  1.1047 | Cd =  0.024280
+4424     | fixed_Re150000_XTR0.10         | max Cl/Cd =   22.149 | AoA =   4.00 deg | Cl =  0.5936 | Cd =  0.026800
+2312     | free_Re1500000_N5              | max Cl/Cd =  101.595 | AoA =   5.00 deg | Cl =  0.7772 | Cd =  0.007650
+2312     | free_Re1500000_N9              | max Cl/Cd =  114.979 | AoA =   5.00 deg | Cl =  0.8129 | Cd =  0.007070
+2312     | free_Re1500000_N12             | max Cl/Cd =  121.385 | AoA =   6.00 deg | Cl =  0.9116 | Cd =  0.007510
+2324     | free_Re1500000_N5              | max Cl/Cd =   85.737 | AoA =   9.00 deg | Cl =  1.0760 | Cd =  0.012550
+2324     | free_Re1500000_N9              | max Cl/Cd =   91.654 | AoA =   8.00 deg | Cl =  0.9917 | Cd =  0.010820
+2324     | free_Re1500000_N12             | max Cl/Cd =   92.309 | AoA =  10.00 deg | Cl =  1.2231 | Cd =  0.013250
+4412     | free_Re1500000_N5              | max Cl/Cd =  133.533 | AoA =   4.00 deg | Cl =  0.9147 | Cd =  0.006850
+4412     | free_Re1500000_N9              | max Cl/Cd =  145.730 | AoA =   5.00 deg | Cl =  1.0274 | Cd =  0.007050
+4412     | free_Re1500000_N12             | max Cl/Cd =  152.155 | AoA =   6.00 deg | Cl =  1.1366 | Cd =  0.007470
+4424     | free_Re1500000_N5              | max Cl/Cd =   91.089 | AoA =   7.00 deg | Cl =  1.0958 | Cd =  0.012030
+4424     | free_Re1500000_N9              | max Cl/Cd =  100.244 | AoA =   7.00 deg | Cl =  1.1097 | Cd =  0.011070
+4424     | free_Re1500000_N12             | max Cl/Cd =  103.884 | AoA =   7.00 deg | Cl =  1.1448 | Cd =  0.011020
+2312     | fixed_Re1500000_XTR0.05        | max Cl/Cd =   96.315 | AoA =   9.00 deg | Cl =  1.1866 | Cd =  0.012320
+2312     | fixed_Re1500000_XTR0.10        | max Cl/Cd =  101.120 | AoA =   8.00 deg | Cl =  1.0921 | Cd =  0.010800
+2312     | fixed_Re1500000_XTR0.20        | max Cl/Cd =  110.452 | AoA =   6.00 deg | Cl =  0.9035 | Cd =  0.008180
+2312     | fixed_Re1500000_XTR0.40        | max Cl/Cd =  114.979 | AoA =   5.00 deg | Cl =  0.8129 | Cd =  0.007070
+2324     | fixed_Re1500000_XTR0.05        | max Cl/Cd =   51.168 | AoA =   8.00 deg | Cl =  0.8540 | Cd =  0.016690
+2324     | fixed_Re1500000_XTR0.10        | max Cl/Cd =   59.027 | AoA =  10.00 deg | Cl =  1.0979 | Cd =  0.018600
+2324     | fixed_Re1500000_XTR0.20        | max Cl/Cd =   79.412 | AoA =  10.00 deg | Cl =  1.1618 | Cd =  0.014630
+2324     | fixed_Re1500000_XTR0.40        | max Cl/Cd =   91.654 | AoA =   8.00 deg | Cl =  0.9917 | Cd =  0.010820
+4412     | fixed_Re1500000_XTR0.05        | max Cl/Cd =   98.530 | AoA =   8.00 deg | Cl =  1.2868 | Cd =  0.013060
+4412     | fixed_Re1500000_XTR0.10        | max Cl/Cd =  107.771 | AoA =   8.00 deg | Cl =  1.3008 | Cd =  0.012070
+4412     | fixed_Re1500000_XTR0.20        | max Cl/Cd =  123.475 | AoA =   7.00 deg | Cl =  1.2187 | Cd =  0.009870
+4412     | fixed_Re1500000_XTR0.40        | max Cl/Cd =  145.730 | AoA =   5.00 deg | Cl =  1.0274 | Cd =  0.007050
+4424     | fixed_Re1500000_XTR0.05        | max Cl/Cd =   46.856 | AoA =   6.00 deg | Cl =  0.8345 | Cd =  0.017810
+4424     | fixed_Re1500000_XTR0.10        | max Cl/Cd =   52.356 | AoA =   7.00 deg | Cl =  0.9513 | Cd =  0.018170
+4424     | fixed_Re1500000_XTR0.20        | max Cl/Cd =   68.524 | AoA =   7.00 deg | Cl =  1.0217 | Cd =  0.014910
+4424     | fixed_Re1500000_XTR0.40        | max Cl/Cd =  100.244 | AoA =   7.00 deg | Cl =  1.1097 | Cd =  0.011070

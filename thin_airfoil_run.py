@@ -142,7 +142,7 @@ def thin_airfoil(m_raw, p_raw, alpha_deg, c=1, N=1000):
 
     # --- Theta array (avoid exact 0 and pi to prevent sin=0 issues) ---
     #theta = np.linspace(1e-6, np.pi - 1e-6, N)
-    theta = np.linspace(1e-1, np.pi - 1e-6, N)
+    theta = np.linspace(1e-1, np.pi - 1e-1, N)
 
     # --- x/c positions corresponding to theta ---
     x = 0.5 * c * (1 - np.cos(theta))  # physical x values
@@ -160,8 +160,7 @@ def thin_airfoil(m_raw, p_raw, alpha_deg, c=1, N=1000):
     # --- Pressure difference distribution ---
     # gamma/U_inf = 2 * (A0*(1+cos)/sin + A1*sin + ...)
     # we keep only A0 and A1 terms (higher terms are negligible)
-    delta_Cp = 2 * (A0 * (1 + np.cos(theta)) / np.sin(theta)
-                    + A1 * np.sin(theta))
+    delta_Cp = 2 * (A0 * (1 + np.cos(theta)) / np.sin(theta) + A1 * np.sin(theta))
 
     x_normalized = x / c  # return x/c not physical x
 
