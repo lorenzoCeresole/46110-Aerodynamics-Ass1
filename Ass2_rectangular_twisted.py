@@ -1,3 +1,10 @@
+'''
+Author: Lorenzo Ceresole
+Course: 46705 - Aerodynamics
+Assignment 2 - Rectangular wing with linear twist
+
+Code: Rectancular wing with linear twist
+'''
 from __future__ import annotations
 
 import numpy as np
@@ -14,7 +21,7 @@ A0_PER_RAD = 2.0 * np.pi       # 2D lift-curve slope
 ALPHA_L0_DEG = -2.0            # Approx. zero-lift AoA for NACA 2410
 N_TERMS = 60                   # Number of Fourier terms
 N_COLLOCATION = 60             # Number of collocation points
-N_PLOT = 401                   # Resolution for smooth plots
+N_PLOT = 801                   # Resolution for smooth plots
 
 
 # ============================================================
